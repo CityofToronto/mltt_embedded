@@ -1,0 +1,12 @@
+{
+  "name": "mltt_tax_calculator",
+  "description": "cot mltt tax calculator",
+  "authors": [
+    "graham.perry@toronto.ca"
+  ],
+  "private": true,
+  "dependencies": {
+    "core": "https://github.com/CityofToronto/corejs.git#6.0.1",
+    "mustache.js": "mustache#^2.3.0"
+  }
+}

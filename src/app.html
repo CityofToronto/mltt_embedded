@@ -1,0 +1,88 @@
+<!--
+IMPORTANT:
+Any resources from this project should be referenced using SRC_PATH preprocessor var.
+See examples below in the boilerplate code
+-->
+
+<!--
+1. HEADER
+Everything inside this cot-app:head tag will be loaded at the end of the page's HEAD tag.
+It should contain stylesheet references (and possibly other stuff) that this application requires.
+-->
+<!-- cot-app:head -->
+
+<!-- standalone apps may want to set some meta tags in here, ex:-->
+<!--<title>mltt_embedded</title>-->
+<!--<meta property="og:title" content="mltt_embedded">-->
+<!--<meta name="DC.title" content="mltt_embedded">-->
+<!--<meta name="WT.sp" content="mltt_embedded">-->
+<!--<meta property="og:description" content="Page Description">-->
+<!--<meta name="DC.description" lang="en" content="Page Description">-->
+<!--<meta name="description" content="Page Description">-->
+<!--<meta name="keywords" content="Key Words">-->
+<!--<meta name="Author" content="City of Toronto">-->
+<!--<meta name="Owner" content="City of Toronto">-->
+<!--<meta name="DC.language" content="en-CA">-->
+<!--<meta name="DC.subject" content="mltt_embedded">-->
+<!--<meta charset="UTF-8">-->
+
+<!-- The useref gulp plugin will concatenate all files inside of this build tag and place the resulting file at the specified path: -->
+<!--@exec startBuildTagWithCacheBuster('styles/main.css')-->
+<!-- CoreJS uses the following tag to inject bower_components stylesheet file references: -->
+<!-- core:css -->
+<!-- endinject -->
+
+<!-- place your application stylesheet references here: -->
+<link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/main.css">
+
+<!-- endbuild -->
+<!--@exec startBuildTagWithCacheBuster('styles/core_print.css', 'media="print"')-->
+<!-- CoreJS uses the following tag to inject bower_components print-only stylesheet file references: -->
+<!-- core_print:css -->
+<!-- endinject -->
+
+<!-- place any application print-only stylesheet references here -->
+
+<!-- endbuild -->
+<!-- cot-app:head end-->
+
+<!--
+2. BODY
+Everything inside this cot-app:body tag will be loaded inside the webpage
+It should contain the HTML elements that make up the visual portion of this application.
+IMPORTANT:
+It is best to avoid the use of IDs on HTML elements because
+- They could collide with other elements if you are not careful.
+- Embedded apps could be placed on the same page more than once.
+-->
+<!-- cot-app:body -->
+<div id="terms_container" class=""></div>
+<div id="view_container" class="mltt_embedded_container"></div>
+
+<!-- cot-app:body end-->
+
+<!--
+3. FOOTER
+Everything inside the cot-app:footer tag will be loaded at the end of the page's BODY tag.
+It should contain script references that this application requires.
+-->
+<!-- cot-app:footer -->
+<!-- The useref gulp plugin will concatenate all files inside of this tag and place the resulting file at the specified path -->
+<!--@exec startBuildTagWithCacheBuster('scripts/main.js')-->
+<!-- CoreJS uses the following tag to inject bower_components script file references: -->
+<!-- core:js -->
+<!-- endinject -->
+
+<!-- place your application script references here: -->
+<script type="text/javascript" src="/bower_components/mustache.js/mustache.js"></script>
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/main.js"></script>
+
+<!-- endbuild -->
+<!--@if ENV!='prod'-->
+<script type="text/javascript">
+  console.log('mltt_embedded running on <!--@echo ENV--> environment');
+  console.log('mltt_embedded qa release: <!--@echo QA_RELEASE-->');
+  console.log('mltt_embedded build: <!--@echo BUILD_ID-->');
+</script>
+<!--@endif-->
+<!-- cot-app:footer end-->

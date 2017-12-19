@@ -1,0 +1,104 @@
+{
+  "Pay By Cheque": "<p>Pay By Cheque<\/p>",
+  "title": "Step 1: Overview",
+  "Total": "Total Municipal Land Transfer Tax is $",
+  "multi": "Any other property (non-residence or more than two residences) with a value of ",
+  "single": "For a property containing at least one, and not more than two, single-family residences with a value of ",
+  "firstTime": "First Time Buyer: single-family residences with a value of ",
+  "multiLink": "",
+  "singleLink": "",
+  "firstTimeLink": "<p>The rebate for first time home buyers is subject to eligibility rules.&nbsp;Some buyers may be ineligible, or only partially eligible. Please refer to <a href='http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=4f90ff0e43db1410VgnVCM10000071d60f89RCRD'>Rebate Opportunities</a> for more information and consult your real estate lawyer.</p>",
+  "appTitle": "Municipal Land Transfer Tax Calculator",
+  "propertyValueLabel": "Value of consideration",
+  "propertyValuePlaceHolder": "Value of consideration",
+  "propertyTypeLabel": "Property Type",
+  "propertyTypes": {
+    "single": "Single Family",
+    "multi": "All Other",
+    "firstTime": "First Time Buyer"
+  },
+  "formButtonLabels": {
+    "calculate": "Calculate",
+    "refresh": "Refresh",
+    "print": "Print"
+  },
+  "step2": "Step 2: Calculate",
+  "step1": "Step 1: Overview",
+  "calculation": {
+    "single": {
+      "ranges": 4,
+      "range": {
+        "first": {
+          "rate": 0.005,
+          "low": 0,
+          "high": 55000
+        },
+        "second": {
+          "rate": 0.01,
+          "low": 55000.01,
+          "high": 250000
+        },
+        "third": {
+          "rate": 0.015,
+          "low": 250000.01,
+          "high": 400000
+        },
+        "fourth": {
+          "rate": 0.02,
+          "low": 400000.01,
+          "high": 2000000
+        },
+        "final": {
+          "rate": 0.025,
+          "low": 2000000.01,
+          "high": 1
+        }
+      }
+    },
+    "multi": {
+      "ranges": 3,
+      "range": {
+        "first": {
+          "rate": 0.005,
+          "low": 0,
+          "high": 55000
+        },
+        "second": {
+          "rate": 0.01,
+          "low": 55000.01,
+          "high": 250000
+        },
+        "third": {
+          "rate": 0.015,
+          "low": 250000.01,
+          "high": 400000
+        },
+        "final": {
+          "rate": 0.02,
+          "low": 400000.01,
+          "high": 1
+        }
+      }
+    },
+    "firstTime": {
+      "ranges": 2,
+      "range": {
+        "first": {
+          "rate": 0,
+          "low": 0,
+          "high": 400000
+        },
+        "second": {
+          "rate": 0.02,
+          "low": 400000.01,
+          "high": 2000000
+        },
+        "final": {
+          "rate": 0.025,
+          "low": 2000000.01,
+          "high": 1
+        }
+      }
+    }
+  }
+}
