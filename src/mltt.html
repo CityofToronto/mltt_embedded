@@ -1,63 +1,89 @@
 <section id="fh-steps" class="hide">
-	<section id="fh-step1">
-		<h2>{{step1}}</h2>
-
-		<div class="contentblock">
-			<div id="step1Content" class="">{{{overview}}}
-			</div>
-		</div>
-		<section class="btn-bar">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-3">
-					<button class="btn btn-primary" id="btn_back" ><span class="glyphicon glyphicon-chevron-left"></span><span class="buttontext">Back</span></button>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3">
-					<button class="btn btn-primary" id="btn_forward"><span class="buttontext">Continue</span><span class="glyphicon glyphicon-chevron-right"></span></button>
-				</div>
-			</div>
-		</section>
-	</section>
-	<section id="fh-step2" class="hide">
-		<h2>{{step2}}</h2>
-		<div class="contentblock">
-			<div id="step2Content" class="well">
-				<form id="numericForm" class="form hidden-print">
-			 		<div class="form-group">
-            <label for="properyValue"><strong >{{propertyValueLabel}}</strong></label>
-						<input name="properyValue" id="properyValue"  placeholder="{{propertyValuePlaceHolder}}"/>
-					</div>
-           <fieldset >
-             <legend class="sr-only"><span class="accesibility">{{propertyTypeLabel}}</span></legend>
-             <strong >{{propertyTypeLabel}}</strong>
-             <label class="radio-inline" for="single"><input type="radio" name="optradio" id="single" value="single" checked="checked">{{propertyTypes.single}}</label>
-             <label class="radio-inline" for="multi"><input type="radio" name="optradio" id="multi" value="multi">{{propertyTypes.multi}}</label>
-             <label class="radio-inline" for="firstTime"><input type="radio" name="optradio" id="firstTime" value="firstTime">{{propertyTypes.firstTime}}</label>
-           </fieldset>
-          <button  id="btn_calc" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-cog"></span>{{formButtonLabels.calculate}}</button>
-          <button class="btn btn-primary btn-sm" id="btn_calc_refresh" ><span class="glyphicon glyphicon-refresh"></span>{{formButtonLabels.refresh}}</button>
-          <button class="btn btn-primary btn-sm" id="btn_print"><span class="glyphicon glyphicon-print"></span>{{formButtonLabels.print}}</button>
-				</form>
-				<div id="calcArea"></div>
-			</div>
-		</div>
-		<div id="fh-buttonbartop" class="panel buttonbar">
-			<div class="panel-body">
-				<div class="row">
-					<div id="btnTopElement" class="col-xs-12 form-group form-group-vertical">
-						<div>
-							<div>
-								<section class="btn-bar">
-									<div class="row">
-										<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4"><button id="btn_back_2" type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-left"></span><span class="buttontext">Back</span></button></div>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="fh-step1">
+    <h2>{{step1}}</h2>
+    <div class="contentblock">
+      <div id="step1Content" class="">{{{overview}}}
+      </div>
+    </div>
+    <section class="btn-bar">
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn btn-primary pull-right" id="btn_back"><span
+            class="glyphicon glyphicon-chevron-left"></span><span class="buttontext">Back</span></button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn btn-primary" id="btn_forward"><span class="buttontext">Continue</span><span
+            class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="fh-step2" class="hide">
+    <h2>{{step2}}</h2>
+    <div class="contentblock">
+      <div id="step2Content" class="well">
+        <form id="numericForm" class="form-inline hidden-print">
+          <div class="row">
+            <div class="form-group">
+              <label for="propertyValue"><strong>{{propertyValueLabel}}</strong></label>
+              <input class="form-control required" name="propertyValue" id="propertyValue" placeholder="{{propertyValuePlaceHolder}}" />
+            </div>
+          </div>
+          <div class="row">
+            <fieldset class="">
+              <legend class="sr-only"><span class="accesibility">{{propertyTypeLabel}}</span></legend>
+              <strong>{{propertyTypeLabel}}</strong>
+              <label class="horizontal entryField radioLabel" for="single">
+                <input type="radio" name="optradio" id="single" value="single" checked>{{propertyTypes.single}}
+              </label>
+              <label class="horizontal entryField radioLabel" for="firstTime">
+                <input type="radio" name="optradio" id="firstTime" value="firstTime">
+                {{propertyTypes.firstTime}}
+              </label>
+              <label class="horizontal entryField radioLabel" for="multi">
+                <input type="radio" name="optradio" id="multi" value="multi">
+                {{propertyTypes.multi}}
+              </label>
+            </fieldset>
+          </div>
+          <div class="row">
+            <button id="btn_calc" class="btn btn-primary btn-sm">
+              <span class="glyphicon glyphicon-cog"></span>{{formButtonLabels.calculate}}
+            </button>
+            <button class="btn btn-primary btn-sm" id="btn_calc_refresh">
+              <span class="glyphicon glyphicon-refresh"></span>{{formButtonLabels.refresh}}
+            </button>
+            <button class="btn btn-primary btn-sm" id="btn_print">
+              <span class="glyphicon glyphicon-print"></span>{{formButtonLabels.print}}
+            </button>
+          </div>
+        </form>
+        <div id="calcArea"></div>
+      </div>
+    </div>
+    <div id="fh-buttonbartop" class="panel buttonbar">
+      <div class="panel-body">
+        <div class="row">
+          <div id="btnTopElement" class="col-xs-12 form-group form-group-vertical">
+            <div>
+              <div>
+                <section class="btn-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+                      <button id="btn_back_2" type="button" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="buttontext">Back</span>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 
 
