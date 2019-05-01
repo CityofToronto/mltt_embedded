@@ -29,7 +29,7 @@ $(function () {
   });
 
 function initialize() {
-  $.get("/* @echo SRC_PATH*//html/mltt.html #fh-steps", function (template) {
+  $.get("/* @echo SRC_PATH*//html/mltt.html#fh-steps", function (template) {
     let rendered = Mustache.render(template, config);
     //console.log(rendered)
     $("#view_container").empty().html(rendered);
