@@ -31,7 +31,6 @@ $(function () {
 function initialize() {
   $.get("/* @echo SRC_PATH*//html/mltt.html#fh-steps", function (template) {
     let rendered = Mustache.render(template, config);
-    //console.log(rendered)
     $("#view_container").empty().html(rendered);
     loadFormValidation();
     showTerms();
@@ -42,16 +41,6 @@ function initialize() {
 }
 
 function loadFormValidation() {
-/*
-  let refresh = $('#btn_calc_refresh');
-  $('#btn_back').click(function () {navigatetoStep(1);});
-  $('#btn_forward').click(function () {showSessions();});
-  $('#btn_calc').click(function () {calculateMLTT($('#properyValue').val());});
-  $('#btn_print').click(function () {window.print();});
-  $("input:radio[name=optradio]").click(function () {calculateMLTT($('#properyValue').val());});
-  refresh.click(function () {refreshCalculator();});
-  $('#btn_back_2').click(function () {navigatetoStep(2);refreshCalculator();});
-*/
 
   $("#view_container")
     .off("click", "#btn_back").on("click","#btn_back", function(){navigatetoStep(1);})
@@ -60,7 +49,7 @@ function loadFormValidation() {
     .off("click", "#btn_calc").on("click","#btn_calc", function(){calculateMLTT($('#propertyValue').val());})
     .off("click", "input:radio[name=optradio]").on("click","input:radio[name=optradio]", function(){calculateMLTT($('#propertyValue').val());})
     .off("click", "#btn_print").on("click","#btn_print", function(){window.print();})
-    .off("click", "#btn_calc_refresh").on("click","#btn_calc_refresh", function(){navigatetoStep(2);refreshCalculator();})
+    .off("click", "#btn_calc_refresh").on("click","#btn_calc_refresh", function(){refreshCalculator();})
     .off("keyup", "#propertyValue").on("keyup","#propertyValue", function (event) {
     if (event.keyCode === 13) {
       $("#btn_calc").click();
@@ -187,6 +176,7 @@ function processCalculations(strValue, category) {
 function showSessions() {
   $("#fh-step1, #fh-step3").addClass("hide");
   $("#fh-step2").removeClass("hide");
+  $("h2:visible").focus();
 }
 
 function showTerms() {
@@ -200,6 +190,7 @@ function showTerms() {
       $("#fh-steps").removeClass("hide");
     }
   });
+  $("h2:visible").focus();
 }
 
 function navigatetoStep(stepNo) {
@@ -212,6 +203,7 @@ function navigatetoStep(stepNo) {
     case 2:
       $("#fh-step2").addClass("hide");
       $("#fh-step1").removeClass("hide");
+      $("h2:visible").focus();
       break;
     default:
   }

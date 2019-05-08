@@ -1,6 +1,6 @@
 <section id="fh-steps" class="hide">
   <section id="fh-step1">
-    <h2>{{step1}}</h2>
+    <h2 tabindex="-1">{{step1}}</h2>
     <div class="contentblock">
       <div id="step1Content" class="">{{{overview}}}
       </div>
@@ -19,32 +19,41 @@
     </section>
   </section>
   <section id="fh-step2" class="hide">
-    <h2>{{step2}}</h2>
+    <h2 tabindex="-1">{{step2}}</h2>
     <div class="contentblock">
       <div id="step2Content" class="well">
-        <form id="numericForm" class="form-inline hidden-print">
+        <form id="numericForm" class="cot-form">
           <div class="row">
-            <div class="form-group">
-              <label for="propertyValue"><strong>{{propertyValueLabel}}</strong></label>
-              <input class="form-control required" name="propertyValue" id="propertyValue" placeholder="{{propertyValuePlaceHolder}}" />
+            <div class="col-xs-12 col-md-4 form-group form-group-vertical has-feedback">
+              <div>
+                <label class="control-label" for="propertyValue"><span>{{propertyValueLabel}}</span></label>
+                <div class="entryField">
+                  <input class="form-control required" name="propertyValue" id="propertyValue"
+                         placeholder="{{propertyValuePlaceHolder}}"/>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">
-            <fieldset class="">
-              <legend class="sr-only"><span class="accesibility">{{propertyTypeLabel}}</span></legend>
-              <strong>{{propertyTypeLabel}}</strong>
-              <label class="horizontal entryField radioLabel" for="single">
-                <input type="radio" name="optradio" id="single" value="single" checked>{{propertyTypes.single}}
-              </label>
-              <label class="horizontal entryField radioLabel" for="firstTime">
-                <input type="radio" name="optradio" id="firstTime" value="firstTime">
-                {{propertyTypes.firstTime}}
-              </label>
-              <label class="horizontal entryField radioLabel" for="multi">
-                <input type="radio" name="optradio" id="multi" value="multi">
-                {{propertyTypes.multi}}
-              </label>
-            </fieldset>
+            <div class="col-xs-12 col-md-4 form-group form-group-horizontal has-feedback">
+              <div>
+                <span class="staticlabel radio"><span>{{propertyTypeLabel}}</span></span>
+                <fieldset class="form-control">
+                  <legend class="sr-only"><span class="accesibility">{{propertyTypeLabel}}</span></legend>
+                  <label class="horizontal entryField radioLabel" for="single">
+                    <input type="radio" name="optradio" id="single" value="single" checked>{{propertyTypes.single}}
+                  </label>
+                  <label class="horizontal entryField radioLabel" for="firstTime">
+                    <input type="radio" name="optradio" id="firstTime" value="firstTime">
+                    {{propertyTypes.firstTime}}
+                  </label>
+                  <label class="horizontal entryField radioLabel" for="multi">
+                    <input type="radio" name="optradio" id="multi" value="multi">
+                    {{propertyTypes.multi}}
+                  </label>
+                </fieldset>
+              </div>
+            </div>
           </div>
           <div class="row">
             <button id="btn_calc" class="btn btn-primary btn-sm">

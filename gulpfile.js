@@ -1,14 +1,17 @@
 const gulp = require('gulp');
-const core = require('./bower_components/core/gulp_helper');
+const core = require('./node_modules/core/gulp_helper');
 const pkg = require('./package.json');
 
-let options = {
-  pkg, //pass in the contents of package.json
-
-  embedArea: 'full'
-};
-
-core.embeddedApp.createTasks(gulp, options);
-
+core.embeddedApp.createTasks(gulp, {
+  pkg,
+  embedArea: 'full',
+  environmentOverride: null,
+  deploymentPath: '',
+  preprocessorContext: {
+    local: {},
+    dev: {},
+    qa: {},
+    prod: {}
+  }
+});
 return gulp.src(['src/data/*']).pipe(gulp.dest('dist/app_content' ));
-
